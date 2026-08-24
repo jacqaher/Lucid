@@ -602,6 +602,7 @@
     flex-wrap:wrap;
     box-shadow:0 -6px 24px rgba(0,0,0,0.18);
   }
+  .cookie-banner[hidden]{ display:none; }
   .cookie-banner p{
     font-size:13.5px;
     line-height:1.5;
@@ -983,11 +984,13 @@
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
       setCookie('lucid_cookie_consent', 'granted', 180);
       banner.hidden = true;
+      banner.style.display = 'none';
     });
 
     document.getElementById('cookie-decline').addEventListener('click', ()=>{
       setCookie('lucid_cookie_consent', 'denied', 180);
       banner.hidden = true;
+      banner.style.display = 'none';
     });
   })();
 </script>
